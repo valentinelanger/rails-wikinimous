@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <div class="navbar">
+      <ul class="list-inline">
+        <li><%= link_to 'wikinimous', articles_path %></li>
+        <li><%= link_to 'Add a new article', new_article_path %></li>
+      </ul>
+    </div>
+
     <%= yield %>
+
   </body>
 </html>

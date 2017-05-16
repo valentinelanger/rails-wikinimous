@@ -1,0 +1,26 @@
+<div class="container">
+  <h2 class="text-center"><%= Kramdown::Document.new(@article.title).to_html.html_safe %></h2>
+  <br>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+      <p><%= Kramdown::Document.new(@article.content).to_html.html_safe %></p>
+    </div>
+  </div>
+  <br><br>
+
+  <div class="text-center">
+    <%= link_to 'Update your article', edit_article_path(@article) %>
+  </div>
+
+  <div class="text-center">
+    <%= link_to 'Delete this article', article_path(@article),
+      method: :delete,
+      data: { confirm: "are you sure?" }
+    %>
+  </div>
+
+  <div class="text-center">
+    <%= link_to 'Home page', articles_path %>
+  </div>
+</div>
